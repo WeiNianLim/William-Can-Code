@@ -1,9 +1,10 @@
 {
   "name": "william-can-code",
-  "homepage": "https://WeiNianLim.github.io/William-Can-Code/",
+  "homepage": "https://WeiNianLim.github.io/William-Can-Code",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.4",
     "ajv-keywords": "^3.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
@@ -16,7 +17,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
-    
   },
   "eslintConfig": {
     "extends": "react-app"
