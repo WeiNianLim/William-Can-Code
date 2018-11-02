@@ -5,25 +5,27 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">William Logo</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact Me</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <div id="landingImg">
+          <nav className="navbar navbar-expand-lg navbar-inverse fixed-top1 transparent ">
+            <a className="navbar-brand" href="#">William Logo</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse navbar-inner" id="navbarText">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">About</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Projects</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">Contact Me</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
     );
   }
