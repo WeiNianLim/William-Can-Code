@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -17,15 +17,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import Grid from '@material-ui/core/Grid';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 const styles = theme => ({
   appBar: {
     backgroundColor: "transparent",
     boxShadow: "none"
   },
-
-  iconButton: {
-    color: "white"
+  navRef: {
+    fontWeight: "900",
+    '&:hover' : {
+      textDecoration: "underline",
+    }
+  },
+  navIcon: {
+    color: "white",
   }
 })
 
@@ -49,25 +55,24 @@ class App extends Component {
       <div className="App">
         <div id="landingImg">
           <div id="layer">
-            
+            <AppBar position="absolute" className={classes.appBar}>
               {
-                width === 'md' || width === 'lg' || width === 'xl'
+                isWidthUp('sm', width)
                 ? <Grid container spacing={32} justify="space-evenly" style={{margin: "0"}}>
-                    <Grid item style={{fontWeight: "900"}}>About</Grid>
-                    <Grid item style={{fontWeight: "900"}}>Projects</Grid>
-                    <Grid item style={{padding: "0", color: "white"}}><a href="#"><img src="/images/logo.png" style={{maxHeight : "100%", maxWidth: "100%"}}/></a></Grid>
-                    <Grid item style={{fontWeight: "900"}}>Blog</Grid>
-                    <Grid item style={{fontWeight: "900"}}>Contact Me</Grid>
+                    <Grid item className={classes.navRef}>About</Grid>
+                    <Grid item className={classes.navRef}>Projects</Grid>
+                    <Grid item className={classes.navRef}><a href="#"><WhatshotIcon style={{color : "white"}}/></a></Grid>
+                    <Grid item className={classes.navRef}>Blog</Grid>
+                    <Grid item className={classes.navRef}>Contact Me</Grid>
                   </Grid>
-                : <AppBar position="absolute" className={classes.appBar}>
-                    <Toolbar>
-                      <IconButton onClick={this.handleDrawerOpen} className={classes.iconButton}>
-                        <MenuIcon/>
-                      </IconButton>
-                    </Toolbar>
-                  </AppBar>
+                :
+                  <Toolbar>
+                    <IconButton onClick={this.handleDrawerOpen} className={classes.navIcon}>
+                      <MenuIcon/>
+                    </IconButton>
+                  </Toolbar>
               }
-            
+            </AppBar>
             <Drawer open={this.state.open} onClose={this.handleDrawerClose}>
               <List>
                 <ListItem>
@@ -82,7 +87,7 @@ class App extends Component {
               </List>
             </Drawer>
           </div>
-         
+
         </div>
       </div>
     );
