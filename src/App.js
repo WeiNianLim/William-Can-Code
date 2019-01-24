@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -32,7 +32,26 @@ const styles = theme => ({
   },
   navIcon: {
     color: "white",
+  },
+  App: {
+    textAlign: "center",
+  },
+  landingImg: {
+    height:"100vh",
+    background:' url("images/landing.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    color: "aliceblue"
+  },
+  logo: {
+    height: "100%",
+    width: "auto",
+  },
+  layer: {
+    backgroundColor: "rgb(3,3,3,0.6)",
+    height: "100vh",
   }
+  
 })
 
 class App extends Component {
@@ -52,9 +71,9 @@ class App extends Component {
   render() {
     const {classes, width} = this.props
     return (
-      <div className="App">
-        <div id="landingImg">
-          <div id="layer">
+      <div className={classes.App}>
+        <div className={classes.landingImg}>
+          <div className={classes.layer}>
             <AppBar position="absolute" className={classes.appBar}>
               {
                 isWidthUp('sm', width)
