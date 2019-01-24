@@ -38,7 +38,7 @@ const styles = theme => ({
   },
   landingImg: {
     height:"100vh",
-    background:' url("images/landing.jpg")',
+    background:' url("https://weinianlim.github.io/William-Can-Code/images/landing.jpg")',
     backgroundSize: "cover",
     backgroundPosition: "center",
     color: "aliceblue"
@@ -70,6 +70,7 @@ class App extends Component {
 
   render() {
     const {classes, width} = this.props
+    console.log(window.location.href)
     return (
       <div className={classes.App}>
         <div className={classes.landingImg}>
