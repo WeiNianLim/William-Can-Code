@@ -8,15 +8,15 @@ export default class App extends Component {
   render(){
     return(
       <Switch>
-        <Route path="/" exact render={
+        <Route path={`${process.env.PUBLIC_URL}/`} exact render={
             reactProps => 
               <Home />
         }/>
-        <Route path="/About" render={
+        <Route path={`${process.env.PUBLIC_URL}/about`} render={
             reactProps => 
               <About />
         }/>
-        <Route path="/Projects" render={
+        <Route path={`${process.env.PUBLIC_URL}/projects`} render={
             reactProps => 
               <Projects />
         }/>
