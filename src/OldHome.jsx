@@ -18,7 +18,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Grid from "@material-ui/core/Grid";
 import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
-import Typography from '@material-ui/core/Typography';
+
 
 const styles = theme => ({
   appBar: {
@@ -62,7 +62,7 @@ const styles = theme => ({
   }
 });
 
-class Home extends Component {
+class OldHome extends Component {
   state = {
     open: false
   };
@@ -98,9 +98,7 @@ class Home extends Component {
                 >
                   <Grid item>
                     <WhatshotIcon style={{ color: "white" }} />
-                    <Typography variant="h4" gutterBottom>
-                      I'm Will
-                    </Typography>
+                    
                   </Grid>
                   <Grid
                     container
@@ -147,8 +145,8 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+OldHome.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withWidth()(withStyles(styles)(Home));
+export default withWidth()(withStyles(styles)(OldHome));
