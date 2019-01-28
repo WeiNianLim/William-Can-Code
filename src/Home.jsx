@@ -26,10 +26,17 @@ import Avatar from "@material-ui/core/Avatar";
 const styles = theme => ({
   app: {
     maxWidth: 1200,
-    margin: "auto",
-    paddingLeft: 50,
-    paddingRight: 50,
-    width: "100%"
+    margin: "0 auto",
+    padding: "0 50px",
+    [theme.breakpoints.down('md')]: {
+      padding: "0 35px"
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: "0 20px"
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: "0 10px"
+    },
   },
   appBar: {
     backgroundColor: "transparent",
