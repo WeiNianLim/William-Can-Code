@@ -22,25 +22,43 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
+import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
   app: {
     maxWidth: 1200,
     margin: "0 auto",
     padding: "0 50px",
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       padding: "0 35px"
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down("sm")]: {
       padding: "0 20px"
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       padding: "0 10px"
-    },
+    }
   },
   appBar: {
     backgroundColor: "transparent",
     boxShadow: "none"
+  },
+  navButton: {
+    color: "#ccd0d5",
+    "&:hover": {
+      color: "#377dff",
+      backgroundColor: "transparent"
+    }
+  },
+  introDivider: {
+    height: 5, 
+    width: 60,
+    // backgroundColor: "#eaf2ff"377dff,
+    backgroundColor: "#377dff", 
+    margin: "30px 0"
+  },
+  divider: {
+    margin: "15px 0"
   }
 });
 
@@ -89,7 +107,7 @@ class Home extends Component {
                     />
                   </Grid>
                   <Grid item />
-                  <Typography variant="h4">I'm Will</Typography>
+                  {/* <Typography variant="h4">I'm Will</Typography> */}
                 </Grid>
               </Grid>
               <Grid item>
@@ -99,14 +117,14 @@ class Home extends Component {
                   justify="flex-end"
                   alignItems="center"
                 >
-                  <Grid item align="center">
-                    <Button>Projects</Button>
+                  <Grid item>
+                    <Button className={classes.navButton}>Projects</Button>
                   </Grid>
-                  <Grid item align="center">
-                    <Button>About</Button>
+                  <Grid item>
+                    <Button className={classes.navButton}>About</Button>
                   </Grid>
-                  <Grid item align="center">
-                    <Button>Contact Me</Button>
+                  <Grid item>
+                    <Button className={classes.navButton}>Contact Me</Button>
                   </Grid>
                 </Grid>
               </Grid>
@@ -159,32 +177,38 @@ class Home extends Component {
             <ListItem>Contact Me</ListItem>
           </List>
         </Drawer>
-        <Grid
-          container
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-        >
-          <Grid item>
-            <Typography variant="h3" gutterBottom>
-              Hi, I'm Will. 
-            </Typography>
-            <Typography variant="h3" gutterBottom>
-              Designer {"&"} Developer
-            </Typography>
+        {/* <Paper elevation={1} style={{padding: "10px"}}> */}
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid item>
+              <Typography variant="h1" style={{color: "#377dff", fontFamily: "Roboto Condensed", fontWeight: "500"}}>
+                Hi, I'm Will
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom style={{color: "#798490", fontFamily: "Roboto Slab"}}>
+                Designer {"&"} Developer
+              </Typography>
+              <Divider variant="fullWidth" className={classes.introDivider}/>
+              <Typography variant="h6" gutterBottom style={{fontFamily: "Roboto"}}>
+                Full Stack Developer at Porton Health
+              </Typography>
+            </Grid>
+            <Grid item align="center">
+              <img
+                style={{ height: "250px", width: "250px" }}
+                src={
+                  url == "http://localhost:3000/"
+                    ? "/images/profile.jpg"
+                    : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+                }
+              />
+            </Grid>
           </Grid>
-          <Grid item align="center">
-            <img
-              style={{ height: "250px", width: "250px" }}
-              src={
-                url == "http://localhost:3000/"
-                  ? "/images/profile.jpg"
-                  : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
-              }
-            />
-          </Grid>
-        </Grid>
-        <Divider variant="middle" />
+        {/* </Paper> */}
+        <Divider variant="middle" className={classes.divider} />
       </div>
     );
   }
