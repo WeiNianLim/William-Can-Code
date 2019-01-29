@@ -177,7 +177,7 @@ class Home extends Component {
             <ListItem>Contact Me</ListItem>
           </List>
         </Drawer>
-        {isWidthUp("sm", width) ? (
+        {isWidthUp("md", width) ? (
           <Grid
             container
             direction="row"
