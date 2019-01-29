@@ -26,7 +26,7 @@ import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
   app: {
-    maxWidth: 1200,
+    maxWidth: 1140,
     margin: "0 auto",
     padding: "0 50px",
     [theme.breakpoints.down("md")]: {
@@ -51,10 +51,10 @@ const styles = theme => ({
     }
   },
   introDivider: {
-    height: 5, 
+    height: 5,
     width: 60,
     // backgroundColor: "#eaf2ff"377dff,
-    backgroundColor: "#377dff", 
+    backgroundColor: "#377dff",
     margin: "30px 0"
   },
   divider: {
@@ -177,7 +177,7 @@ class Home extends Component {
             <ListItem>Contact Me</ListItem>
           </List>
         </Drawer>
-        {/* <Paper elevation={1} style={{padding: "10px"}}> */}
+        {isWidthUp("sm", width) ? (
           <Grid
             container
             direction="row"
@@ -185,20 +185,35 @@ class Home extends Component {
             alignItems="center"
           >
             <Grid item>
-              <Typography variant="h1" style={{color: "#377dff", fontFamily: "Roboto Condensed", fontWeight: "500"}}>
+              <Typography
+                variant="h1"
+                style={{
+                  color: "#377dff",
+                  fontFamily: "Roboto Condensed",
+                  fontWeight: "500"
+                }}
+              >
                 Hi, I'm Will
               </Typography>
-              <Typography variant="subtitle1" gutterBottom style={{color: "#798490", fontFamily: "Roboto Slab"}}>
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                style={{ color: "#798490", fontFamily: "Roboto Slab" }}
+              >
                 Designer {"&"} Developer
               </Typography>
-              <Divider variant="fullWidth" className={classes.introDivider}/>
-              <Typography variant="h6" gutterBottom style={{fontFamily: "Roboto"}}>
+              <Divider variant="fullWidth" className={classes.introDivider} />
+              <Typography
+                variant="h6"
+                gutterBottom
+                style={{ fontFamily: "Roboto" }}
+              >
                 Full Stack Developer at Porton Health
               </Typography>
             </Grid>
             <Grid item align="center">
               <img
-                style={{ height: "250px", width: "250px" }}
+                style={{ borderRadius: "10px", height: "250px", width: "250px" }}
                 src={
                   url == "http://localhost:3000/"
                     ? "/images/profile.jpg"
@@ -207,6 +222,62 @@ class Home extends Component {
               />
             </Grid>
           </Grid>
+        ) : (
+          <Grid
+            container
+            direction="column"
+            justify="space-around"
+            alignItems="center"
+          >
+            <Grid item>
+              <img
+                style={{
+                  borderRadius: "50%",
+                  height: "150px",
+                  width: "150px"
+                }}
+                alt="Avatar"
+                src={
+                  url == "http://localhost:3000/"
+                    ? "/images/profile.jpg"
+                    : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+                }
+              />
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="h4"
+                style={{
+                  color: "#377dff",
+                  fontFamily: "Roboto Condensed",
+                  fontWeight: "500"
+                }}
+              >
+                Hi, I'm Will
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                style={{ color: "#798490", fontFamily: "Roboto Slab" }}
+              >
+                Designer {"&"} Developer
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="h6"
+                gutterBottom
+                style={{ fontFamily: "Roboto" }}
+              >
+                Full Stack Developer at Porton Health
+              </Typography>
+            </Grid>
+          </Grid>
+        )}
+        {/* <Paper elevation={1} style={{padding: "10px"}}> */}
+
         {/* </Paper> */}
         <Divider variant="middle" className={classes.divider} />
       </div>
