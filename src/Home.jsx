@@ -189,7 +189,7 @@ class Home extends Component {
                 variant="h1"
                 style={{
                   color: "#377dff",
-                  fontFamily: "Roboto Condensed",
+                  fontFamily: "Roboto",
                   fontWeight: "500"
                 }}
               >
