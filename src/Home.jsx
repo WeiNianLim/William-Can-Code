@@ -213,7 +213,11 @@ class Home extends Component {
             </Grid>
             <Grid item align="center">
               <img
-                style={{ borderRadius: "10px", height: "250px", width: "250px" }}
+                style={{
+                  borderRadius: "10px",
+                  height: "250px",
+                  width: "250px"
+                }}
                 src={
                   url == "http://localhost:3000/"
                     ? "/images/profile.jpg"
@@ -276,10 +280,93 @@ class Home extends Component {
             </Grid>
           </Grid>
         )}
-        {/* <Paper elevation={1} style={{padding: "10px"}}> */}
 
-        {/* </Paper> */}
         <Divider variant="middle" className={classes.divider} />
+        <Grid container spacing={24}>
+          <Grid item xs={12} sm={4}>
+            <Paper
+              elevation={2}
+              style={{
+                backgroundColor: "#377DFF",
+                padding: "10px",
+                height: "300px"
+              }}
+            >
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <i
+                    class="im im-code"
+                    style={{
+                      color: "#EAF2FF",
+                      fontSize: "96px"
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Paper
+              elevation={2}
+              style={{
+                backgroundColor: "#DE4437",
+                padding: "10px",
+                height: "300px"
+              }}
+            >
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <i
+                    class="im im-layer"
+                    style={{
+                      color: "#FCECEA",
+                      fontSize: "96px",
+                      marginTop: "10px"
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Paper
+              elevation={2}
+              style={{
+                backgroundColor: "#00C9A7",
+                padding: "10px",
+                height: "300px"
+              }}
+            >
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item>
+                  <i
+                    class="im im-android-os"
+                    style={{
+                      color: "#E5FAF6",
+                      fontSize: "96px",
+                      marginTop: "10px"
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
       </div>
     );
   }
