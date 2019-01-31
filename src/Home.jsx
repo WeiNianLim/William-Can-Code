@@ -303,9 +303,18 @@ class Home extends Component {
                     class="im im-code"
                     style={{
                       color: "#EAF2FF",
-                      fontSize: "96px"
+                      fontSize: "96px",
+                      marginTop: "10px"
                     }}
                   />
+                </Grid>
+                <Grid item>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "white", fontFamily: "Roboto Slab", fontWeight: "600" }}
+                  >
+                    Front-End Developer
+                  </Typography>
                 </Grid>
               </Grid>
             </Paper>
@@ -335,6 +344,14 @@ class Home extends Component {
                     }}
                   />
                 </Grid>
+                <Grid item>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "white", fontFamily: "Roboto Slab", fontWeight: "600" }}
+                  >
+                    Back-End Developer
+                  </Typography>
+                </Grid>
               </Grid>
             </Paper>
           </Grid>
@@ -363,6 +380,14 @@ class Home extends Component {
                     }}
                   />
                 </Grid>
+                <Grid item>
+                  <Typography
+                    variant="h5"
+                    style={{ color: "white", fontFamily: "Roboto Slab", fontWeight: "600" }}
+                  >
+                    Android Developer
+                  </Typography>
+                </Grid>
               </Grid>
             </Paper>
           </Grid>
@@ -377,21 +402,3 @@ Home.propTypes = {
 };
 
 export default withWidth()(withStyles(styles)(Home));
-
-{
-  /* <Grid container spacing={24}>
-            <Grid item xs={1} align="center">
-              <WhatshotIcon />
-            </Grid>
-            <Grid item xs />
-            <Grid item xs={1} align="center">
-              <Button color="inherit">Projects</Button>
-            </Grid>
-            <Grid item xs={1} align="center">
-              <Button color="inherit">About</Button>
-            </Grid>
-            <Grid item xs={1} align="center">
-              <Button color="inherit">Contact Me</Button>
-            </Grid>
-          </Grid> */
-}
