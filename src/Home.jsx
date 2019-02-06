@@ -66,8 +66,7 @@ const styles = theme => ({
     margin: "-60px 30px 0px 30px",
     [theme.breakpoints.down("sm")]: {
       margin: "-60px 15px 0px 15px"
-    },
-    
+    }
   },
   mainContent: {
     paddingRight: 15,
@@ -89,12 +88,11 @@ const styles = theme => ({
     marginTop: -80,
     marginBottom: 5,
     width: 160,
-    height: 160,
+    height: 160
   },
   imgAvatar: {
     boxShadow: "rgba(0,0,0,.14), rgba(0,0,0,.12), rgba(0,0,0,.2)"
   }
-  
 });
 
 class Home extends Component {
@@ -139,7 +137,7 @@ class Home extends Component {
                           : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
                       }
                       style={{ margin: "10px" }}
-                      imgProps={{root: classes.imgAva}}
+                      imgProps={{ root: classes.imgAva }}
                     />
                   </Grid>
                   <Grid item />
@@ -223,55 +221,62 @@ class Home extends Component {
                 alignItems="center"
               >
                 <Grid item>
-                  <Avatar  src={
-                            url == "http://localhost:3000/"
-                              ? "/images/profile.jpg"
-                              : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
-                          } className={classes.bigAvatar} 
-                          imgProps={{root: classes.imgAvatar}}/>
+                  <Avatar
+                    src={
+                      url == "http://localhost:3000/"
+                        ? "/images/profile.jpg"
+                        : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+                    }
+                    className={classes.bigAvatar}
+                    imgProps={{ root: classes.imgAvatar }}
+                  />
                 </Grid>
-                <Typography variant="h3" gutterBottom>
-                  h3. Heading
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                  h4. Heading
-                </Typography>
-                <Typography variant="h5" gutterBottom>
-                  h5. Heading
-                </Typography>
-                <Typography variant="h6" gutterBottom>
-                  h6. Heading
-                </Typography>
-                <Typography variant="h3" gutterBottom>
-                  h3. Heading
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                  h4. Heading
-                </Typography>
-                <Typography variant="h5" gutterBottom>
-                  h5. Heading
-                </Typography>
-                <Typography variant="h6" gutterBottom>
-                  h6. Heading
-                </Typography>
-                <Typography variant="h3" gutterBottom>
-                  h3. Heading
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                  h4. Heading
-                </Typography>
-                <Typography variant="h5" gutterBottom>
-                  h5. Heading
-                </Typography>
-                <Typography variant="h6" gutterBottom>
-                  h6. Heading
-                </Typography>
+                <Grid item>
+                  <Typography
+                    variant="h4"
+                    gutterBottom
+                    style={{
+                      marginTop: "20px",
+                      color: "#3c4858",
+                      fontWeight: "700",
+                      fontFamily: "Roboto Slab"
+                    }}
+                  >
+                    William Lim
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    variant="caption"
+                    gutterBottom
+                    style={{
+                      textTransform: "uppercase",
+                      color: "#6f757c",
+                      fontWeight: "700",
+                      fontFamily: "Roboto"
+                    }}
+                  >
+                    Developer {"&"} Designer
+                  </Typography>
+                </Grid>
+                <Grid
+                  item
+                  style={{
+                    marginTop: "30px"
+                  }}
+                >
+                  <i class="im im-linkedin" style={{ color: "#0077B5", marginRight: "20px" }} />
+
+                  <i class="im im-mail" style={{ color: "#D54D40"}} />
+
+                  <i class="im im-github" style={{ color: "#24292E",  marginLeft: "20px" }} />
+                </Grid>
+                
               </Grid>
+              
             </div>
           </Paper>
-          <div style={{height: "100px"}}>
-
-          </div>
+          <div style={{ height: "100px" }} />
         </div>
         {/* <div className={classes.app}>
           <div className={ url == "http://localhost:3000/" ? classes.backgroundImageLocal : classes.backgroundImage}/>                 */}
