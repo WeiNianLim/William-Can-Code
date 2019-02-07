@@ -23,6 +23,11 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Paper from "@material-ui/core/Paper";
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const styles = theme => ({
   app: {
@@ -92,12 +97,32 @@ const styles = theme => ({
   },
   imgAvatar: {
     boxShadow: "rgba(0,0,0,.14), rgba(0,0,0,.12), rgba(0,0,0,.2)"
+  },
+  BNA: {
+    marginLeft: 5,
+    marginRight: 5,
+    backgroundColor: "white",
+    color: "#555555",
+    '&:hover': {
+      backgroundColor: '#EEECEE',
+    },
+    '&:focus': {
+      backgroundColor: '#2196F3',
+    },
   }
 });
 
 class Home extends Component {
   state = {
     open: false
+  };
+
+  state = {
+    value: 0,
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
   };
 
   handleDrawerOpen = () => {
@@ -265,15 +290,62 @@ class Home extends Component {
                     marginTop: "30px"
                   }}
                 >
-                  <i class="im im-linkedin" style={{ color: "#0077B5", marginRight: "20px" }} />
+                  <i
+                    class="im im-linkedin"
+                    style={{ color: "#0077B5", marginRight: "20px" }}
+                  />
 
-                  <i class="im im-mail" style={{ color: "#D54D40"}} />
+                  <i class="im im-mail" style={{ color: "#D54D40" }} />
 
-                  <i class="im im-github" style={{ color: "#24292E",  marginLeft: "20px" }} />
+                  <i
+                    class="im im-github"
+                    style={{ color: "#24292E", marginLeft: "20px" }}
+                  />
                 </Grid>
-                
               </Grid>
-              
+              <Typography
+                variant="body1"
+                gutterBottom
+                style={{
+                  maxWidth: "500px",
+                  textAlign: "center",
+                  margin: "10px auto"
+                }}
+              >
+                body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quos blanditiis tenetur unde suscipit, quam beatae rerum
+                inventore consectetur, neque doloribus, cupiditate numquam
+                dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+              </Typography>
+              <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+              >
+                <BottomNavigation
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  showLabels
+                  className={classes.root}
+                >
+                  <BottomNavigationAction
+                    label="Recents"
+                    icon={<RestoreIcon />}
+                    className={classes.BNA}
+                  />
+                  <BottomNavigationAction
+                    label="Favorites"
+                    icon={<FavoriteIcon />}
+                    className={classes.BNA}
+                  />
+                  <BottomNavigationAction
+                    label="Nearby"
+                    icon={<LocationOnIcon />}
+                    className={classes.BNA}
+                  />
+                </BottomNavigation>
+              </Grid>
             </div>
           </Paper>
           <div style={{ height: "100px" }} />
