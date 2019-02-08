@@ -25,9 +25,12 @@ import Avatar from "@material-ui/core/Avatar";
 import Paper from "@material-ui/core/Paper";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import RestoreIcon from "@material-ui/icons/Restore";
+import WorkIcon from "@material-ui/icons/Work";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+import BuildIcon from "@material-ui/icons/Build";
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 
 const styles = theme => ({
   app: {
@@ -102,24 +105,29 @@ const styles = theme => ({
     marginLeft: 5,
     marginRight: 5,
     color: "#555555",
+    borderRadius: "2px",
+    width: 110,
+    height: 110,
     "&:hover": {
       backgroundColor: "#EEECEE"
     },
     "&:focus": {
-    //   backgroundColor: "purple",
-    //   boxShadow: "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
-      color: "white",
+      //   backgroundColor: "purple",
+      boxShadow:
+        "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+      color: "white"
     },
     "&:active": {
       color: "white",
-    //   backgroundColor: "purple",
-    //   boxShadow: "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+      //   backgroundColor: "purple",
+      boxShadow:
+        "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)"
     }
   },
   BNASelected: {
     backgroundColor: "purple",
-    boxShadow:
-      "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+    // boxShadow:
+    //   "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
     color: "white",
     "&:hover": {
       backgroundColor: "purple",
@@ -132,13 +140,13 @@ const styles = theme => ({
       boxShadow:
         "0 5px 20px  0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
       color: "white"
-    },
-    "&:active": {
-      backgroundColor: "purple",
-      boxShadow:
-        "0 5px 20px  0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
-      color: "white"
-    },
+    }
+    // "&:active": {
+    //   backgroundColor: "purple",
+    //   boxShadow:
+    //     "0 5px 20px  0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+    //   color: "white"
+    // }
   },
   // BNALabel: {
   //   color: "#555555",
@@ -146,21 +154,15 @@ const styles = theme => ({
   //     color: "white"
   //   }
   // },
-  // BNAWrapper: {
-  //   color: "#555555",
-  //   "&:focus": {
-  //     color: "white"
-  //   }
-  // }
+  BNAWrapper: {
+    color: "white"
+  }
 });
 
 class Home extends Component {
   state = {
+    value: "experiences",
     open: false
-  };
-
-  state = {
-    value: "recents"
   };
 
   handleChange = (event, value) => {
@@ -177,6 +179,7 @@ class Home extends Component {
 
   render() {
     const { classes, width } = this.props;
+    const { value } = this.state;
     const url = window.location.href;
     return (
       <div>
@@ -364,6 +367,7 @@ class Home extends Component {
                 direction="column"
                 justify="center"
                 alignItems="center"
+                style={{ height: "200px" }}
               >
                 <BottomNavigation
                   value={this.state.value}
@@ -371,56 +375,76 @@ class Home extends Component {
                   showLabels
                 >
                   <BottomNavigationAction
-                    label="Recents"
-                    value="recents"
-                    icon={<RestoreIcon />}
+                    label="Experiences"
+                    value="experiences"
+                    icon={<WorkIcon />}
                     classes={{
                       root: classes.BNA,
                       selected: classes.BNASelected,
                       label: classes.BNALabel,
-                      wrapper: classes.BNAWrapper
+                      wrapper: value === "experiences" ? classes.BNAWrapper : ""
                     }}
                   />
                   <BottomNavigationAction
-                    label="Favorites"
-                    value="favorites"
-                    icon={<FavoriteIcon />}
+                    label="Technology"
+                    value="technology"
+                    icon={<i class="im im-layer" />}
                     classes={{
                       root: classes.BNA,
-                      selected: classes.BNASelected
+                      selected: classes.BNASelected,
+                      label: classes.BNALabel,
+                      wrapper: value === "technology" ? classes.BNAWrapper : ""
                     }}
                   />
                   <BottomNavigationAction
-                    label="Nearby"
-                    value="nearby"
-                    icon={<LocationOnIcon />}
+                    label="Projects"
+                    value="projects"
+                    icon={<BuildIcon />}
                     classes={{
                       root: classes.BNA,
-                      selected: classes.BNASelected
+                      selected: classes.BNASelected,
+                      label: classes.BNALabel,
+                      wrapper: value === "projects" ? classes.BNAWrapper : ""
                     }}
                   />
                 </BottomNavigation>
               </Grid>
+              <Typography
+                variant="body1"
+                gutterBottom
+                style={{
+                  maxWidth: "500px",
+                  textAlign: "center",
+                  margin: "10px auto"
+                }}
+              >
+                body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quos blanditiis tenetur unde suscipit, quam beatae rerum
+                inventore consectetur, neque doloribus, cupiditate numquam
+                dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+              </Typography>
             </div>
+            <Card className={classes.card}>
+                <CardContent className={classes.content}>
+                  <Typography component="h5" variant="h5">
+                    Live From Space
+                  </Typography>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    Mac Miller
+                  </Typography>
+                </CardContent>
+              <CardMedia
+                className={classes.cover}
+                image={url ==="http://localhost:3000/"
+                            ? "/images/portonlogo.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/portonlogo.png"}
+               
+                title="Live from space album cover"
+              />
+            </Card>
           </Paper>
           <div style={{ height: "100px" }} />
         </div>
-        {/* <div className={classes.app}>
-          <div className={ url == "http://localhost:3000/" ? classes.backgroundImageLocal : classes.backgroundImage}/>                 */}
-        {/* <img
-            src={
-              url === "http://localhost:3000/"
-                ? "/images/vancouver.jpg"
-                : "https://weinianlim.github.io/William-Can-Code/images/vancouver.jpg"
-            }
-            className={classes.backgroundImage}
-          /> */}
-        {/* <Paper
-            className={classes.root}
-            elevation={1}
-            style={{ height: "400px" }}
-          />
-        </div> */}
       </div>
     );
   }
