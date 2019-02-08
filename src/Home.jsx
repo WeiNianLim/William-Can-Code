@@ -23,11 +23,11 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Paper from "@material-ui/core/Paper";
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import RestoreIcon from "@material-ui/icons/Restore";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 const styles = theme => ({
   app: {
@@ -101,15 +101,57 @@ const styles = theme => ({
   BNA: {
     marginLeft: 5,
     marginRight: 5,
-    backgroundColor: "white",
     color: "#555555",
-    '&:hover': {
-      backgroundColor: '#EEECEE',
+    "&:hover": {
+      backgroundColor: "#EEECEE"
     },
-    '&:focus': {
-      backgroundColor: '#2196F3',
+    "&:focus": {
+    //   backgroundColor: "purple",
+    //   boxShadow: "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+      color: "white",
     },
-  }
+    "&:active": {
+      color: "white",
+    //   backgroundColor: "purple",
+    //   boxShadow: "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+    }
+  },
+  BNASelected: {
+    backgroundColor: "purple",
+    boxShadow:
+      "0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "purple",
+      boxShadow:
+        "0 5px 20px  0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+      color: "white"
+    },
+    "&:focus": {
+      backgroundColor: "purple",
+      boxShadow:
+        "0 5px 20px  0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+      color: "white"
+    },
+    "&:active": {
+      backgroundColor: "purple",
+      boxShadow:
+        "0 5px 20px  0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(156,39,176,.6)",
+      color: "white"
+    },
+  },
+  // BNALabel: {
+  //   color: "#555555",
+  //   "&:focus": {
+  //     color: "white"
+  //   }
+  // },
+  // BNAWrapper: {
+  //   color: "#555555",
+  //   "&:focus": {
+  //     color: "white"
+  //   }
+  // }
 });
 
 class Home extends Component {
@@ -118,7 +160,7 @@ class Home extends Component {
   };
 
   state = {
-    value: 0,
+    value: "recents"
   };
 
   handleChange = (event, value) => {
@@ -327,22 +369,35 @@ class Home extends Component {
                   value={this.state.value}
                   onChange={this.handleChange}
                   showLabels
-                  className={classes.root}
                 >
                   <BottomNavigationAction
                     label="Recents"
+                    value="recents"
                     icon={<RestoreIcon />}
-                    className={classes.BNA}
+                    classes={{
+                      root: classes.BNA,
+                      selected: classes.BNASelected,
+                      label: classes.BNALabel,
+                      wrapper: classes.BNAWrapper
+                    }}
                   />
                   <BottomNavigationAction
                     label="Favorites"
+                    value="favorites"
                     icon={<FavoriteIcon />}
-                    className={classes.BNA}
+                    classes={{
+                      root: classes.BNA,
+                      selected: classes.BNASelected
+                    }}
                   />
                   <BottomNavigationAction
                     label="Nearby"
+                    value="nearby"
                     icon={<LocationOnIcon />}
-                    className={classes.BNA}
+                    classes={{
+                      root: classes.BNA,
+                      selected: classes.BNASelected
+                    }}
                   />
                 </BottomNavigation>
               </Grid>
