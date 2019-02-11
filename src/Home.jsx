@@ -25,9 +25,10 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import WorkIcon from "@material-ui/icons/Work";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import BuildIcon from "@material-ui/icons/Build";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import classNames from "classnames";
 
 const styles = theme => ({
   app: {
@@ -78,9 +79,9 @@ const styles = theme => ({
     paddingLeft: 15,
     marginRight: "auto",
     marginLeft: "auto",
-    maxWidth: 1140,
+    maxWidth: 1200,
     [theme.breakpoints.down("md")]: {
-      maxWidth: 950
+      maxWidth: 890
     },
     [theme.breakpoints.down("sm")]: {
       maxWidth: 720
@@ -153,6 +154,63 @@ const styles = theme => ({
   // },
   BNAWrapper: {
     color: "white"
+  },
+  experienceImg: {
+    width: "100%",
+    height: "100%",
+    maxHeight: 200
+  },
+  portonLocal: {
+    background: 'url("/images/portonlogo.png")',
+    backgroundSize: "cover"
+  },
+  porton: {
+    background:
+      'url("https://weinianlim.github.io/William-Can-Code/images/portonlogo.png")',
+    backgroundSize: "cover"
+  },
+  clariusLocal: {
+    background: 'url("/images/clarius.png")',
+    backgroundSize: "cover"
+  },
+  clarius: {
+    background:
+      'url("https://weinianlim.github.io/William-Can-Code/images/clarius.png")',
+    backgroundSize: "cover"
+  },
+  brainstationLocal: {
+    background: 'url("/images/brainstation.png")',
+    backgroundSize: "cover"
+  },
+  brainstation: {
+    background:
+      'url("https://weinianlim.github.io/William-Can-Code/images/brainstation.png")',
+    backgroundSize: "cover"
+  },
+  ubcLocal: {
+    background: 'url("/images/ubc.jpg")',
+    backgroundSize: "cover"
+  },
+  ubc: {
+    background:
+      'url("https://weinianlim.github.io/William-Can-Code/images/ubc.jpg")',
+    backgroundSize: "cover"
+  },
+  experiencesPlace: {
+    fontFamily: "Roboto Slab",
+    fontWeight: "600",
+    color: "#3c4858"
+  },
+  experiencesPosition: {
+    fontFamily: "Roboto Slab",
+    fontWeight: "600",
+    color: "#8B9299",
+    textTransform: "uppercase"
+  },
+  experiencesDescription: {
+    fontFamily: "Roboto Slab",
+    fontWeight: "600",
+    color: "#B5B5B5"
   }
 });
 
@@ -407,38 +465,174 @@ class Home extends Component {
                 </BottomNavigation>
               </Grid>
               <Typography
-                variant="body1"
+                variant="h3"
                 gutterBottom
                 style={{
-                  maxWidth: "500px",
+                  maxWidth: "600px",
                   textAlign: "center",
-                  margin: "10px auto"
+                  margin: "10px auto",
+                  color: "#3c4858",
+                  fontFamily: "Roboto Slab",
+                  fontWeight: "700"
                 }}
               >
-                body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Quos blanditiis tenetur unde suscipit, quam beatae rerum
-                inventore consectetur, neque doloribus, cupiditate numquam
-                dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+                Awesome Experiences
               </Typography>
+              <Grid container spacing={24} style={{ marginTop: "35px" }}>
+                <Grid item xs={12} sm={5} md={2}>
+                  <Paper
+                    elevation={2}
+                    className={classNames(
+                      url === "http://localhost:3000/"
+                        ? classes.portonLocal
+                        : classes.porton,
+                      classes.experienceImg
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={7} md={4}>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    className={classes.experiencesPlace}
+                  >
+                    Porton Health
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    gutterBottom
+                    className={classes.experiencesPosition}
+                  >
+                    Junior Full Stack Developer
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    className={classes.experiencesDescription}
+                  >
+                    Working at Porton Health since 2018, October has been
+                    awesome. Besides able to work with my favourite javscript
+                    library, React, I get to learn how to design, build and test
+                    in Meteor. My team and I are working hard everyday to
+                    deliver the best version of porton health Web Application.
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={5} md={2}>
+                  <Paper
+                    elevation={2}
+                    className={classNames(
+                      url === "http://localhost:3000/"
+                        ? classes.clariusLocal
+                        : classes.clarius,
+                      classes.experienceImg
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={7} md={4}>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    className={classes.experiencesPlace}
+                  >
+                    Clarius Mobile Health
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    gutterBottom
+                    className={classes.experiencesPosition}
+                  >
+                    Software Engineer
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    className={classes.experiencesDescription}
+                  >
+                    Clarius was my stepping stone towards programming industry.
+                    My main focus there was to develop new software feature for
+                    their android version of Clarius Mobile Application. During
+                    my time there, I had the opportunity to learn new
+                    programming language and technology such as python, Qt and
+                    Jenkins
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={5} md={2}>
+                  <Paper
+                    elevation={2}
+                    className={classNames(
+                      url === "http://localhost:3000/"
+                        ? classes.brainstationLocal
+                        : classes.brainstation,
+                      classes.experienceImg
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={7} md={4}>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    className={classes.experiencesPlace}
+                  >
+                    Brainstation
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    gutterBottom
+                    className={classes.experiencesPosition}
+                  >
+                    Full Time Web Development Student
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    className={classes.experiencesDescription}
+                  >
+                    Brainstation was nothing but endless of fun. I took at 10
+                    week full time web development program and I got to say, it
+                    was intense! In the end of the program, I was able to build
+                    MERN stack Web Application from scratch, comfortably.
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={5} md={2}>
+                  <Paper
+                    elevation={2}
+                    className={classNames(
+                      url === "http://localhost:3000/"
+                        ? classes.ubcLocal
+                        : classes.ubc,
+                      classes.experienceImg
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={7} md={4}>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    className={classes.experiencesPlace}
+                  >
+                    University of British Columbia
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    gutterBottom
+                    className={classes.experiencesPosition}
+                  >
+                    B.A.Sc in Electrical Engineering
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    className={classes.experiencesDescription}
+                  >
+                    My four years in UBC was a phenomenal period of time. The
+                    were ups and downs and it was a really truly challenging and
+                    hard for me. I am glad that I did not quit as UBC showed me
+                    what I love and capable of doing, gifted me passion of
+                    continuous learning and trained me to not give up.
+                  </Typography>
+                </Grid>
+              </Grid>
             </div>
-            <Card className={classes.card}>
-                <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                    Live From Space
-                  </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    Mac Miller
-                  </Typography>
-                </CardContent>
-              <CardMedia
-                className={classes.cover}
-                image={url ==="http://localhost:3000/"
-                            ? "/images/portonlogo.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/portonlogo.png"}
-               
-                title="Live from space album cover"
-              />
-            </Card>
           </Paper>
           <div style={{ height: "100px" }} />
         </div>
@@ -455,7 +649,7 @@ export default withWidth()(withStyles(styles)(Home));
 
 // {isWidthUp("md", width) ? (
 //   <Grid
-//     container
+//
 //     direction="row"
 //     justify="space-between"
 //     alignItems="center"
@@ -576,13 +770,13 @@ export default withWidth()(withStyles(styles)(Home));
 //       }
 //     />
 //   </Grid>
-//   <Grid item xs={12} sm={8}>
+//   <Grid item xs={12} sm={7}>
 //     <Typography variant="h5" gutterBottom>
 //       Porton Health
 //     </Typography>
 //   </Grid>
 
-//   <Grid item xs={12} sm={8}>
+//   <Grid item xs={12} sm={7}>
 //     <Typography variant="h5" gutterBottom>
 //       Brainstation
 //     </Typography>
