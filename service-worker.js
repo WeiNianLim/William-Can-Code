@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/William-Can-Code/precache-manifest.480f2b209d8dd26fca2716f0f09f5a2c.js"
+  "/William-Can-Code/precache-manifest.25681dc18c02cc08b59a0b3aa9acd3c9.js"
 );
 
 workbox.clientsClaim();
