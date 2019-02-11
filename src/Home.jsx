@@ -157,8 +157,7 @@ const styles = theme => ({
   },
   experienceImg: {
     width: "100%",
-    height: "100%",
-    maxHeight: 200
+    height: 200
   },
   portonLocal: {
     background: 'url("/images/portonlogo.png")',
@@ -479,159 +478,164 @@ class Home extends Component {
                 Awesome Experiences
               </Typography>
               <Grid container spacing={24} style={{ marginTop: "35px" }}>
-                <Grid item xs={12} sm={5} md={2}>
-                  <Paper
-                    elevation={2}
-                    className={classNames(
-                      url === "http://localhost:3000/"
-                        ? classes.portonLocal
-                        : classes.porton,
-                      classes.experienceImg
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={7} md={4}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    className={classes.experiencesPlace}
-                  >
-                    Porton Health
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    gutterBottom
-                    className={classes.experiencesPosition}
-                  >
-                    Junior Full Stack Developer
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    className={classes.experiencesDescription}
-                  >
-                    Working at Porton Health since 2018, October has been
-                    awesome. Besides able to work with my favourite javscript
-                    library, React, I get to learn how to design, build and test
-                    in Meteor. My team and I are working hard everyday to
-                    deliver the best version of porton health Web Application.
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={5} md={2}>
-                  <Paper
-                    elevation={2}
-                    className={classNames(
-                      url === "http://localhost:3000/"
-                        ? classes.clariusLocal
-                        : classes.clarius,
-                      classes.experienceImg
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={7} md={4}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    className={classes.experiencesPlace}
-                  >
-                    Clarius Mobile Health
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    gutterBottom
-                    className={classes.experiencesPosition}
-                  >
-                    Software Engineer
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    className={classes.experiencesDescription}
-                  >
-                    Clarius was my stepping stone towards programming industry.
-                    My main focus there was to develop new software feature for
-                    their android version of Clarius Mobile Application. During
-                    my time there, I had the opportunity to learn new
-                    programming language and technology such as python, Qt and
-                    Jenkins
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={5} md={2}>
-                  <Paper
-                    elevation={2}
-                    className={classNames(
-                      url === "http://localhost:3000/"
-                        ? classes.brainstationLocal
-                        : classes.brainstation,
-                      classes.experienceImg
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={7} md={4}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    className={classes.experiencesPlace}
-                  >
-                    Brainstation
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    gutterBottom
-                    className={classes.experiencesPosition}
-                  >
-                    Full Time Web Development Student
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    className={classes.experiencesDescription}
-                  >
-                    Brainstation was nothing but endless of fun. I took at 10
-                    week full time web development program and I got to say, it
-                    was intense! In the end of the program, I was able to build
-                    MERN stack Web Application from scratch, comfortably.
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} sm={5} md={2}>
-                  <Paper
-                    elevation={2}
-                    className={classNames(
-                      url === "http://localhost:3000/"
-                        ? classes.ubcLocal
-                        : classes.ubc,
-                      classes.experienceImg
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={7} md={4}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    className={classes.experiencesPlace}
-                  >
-                    University of British Columbia
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    gutterBottom
-                    className={classes.experiencesPosition}
-                  >
-                    B.A.Sc in Electrical Engineering
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    className={classes.experiencesDescription}
-                  >
-                    My four years in UBC was a phenomenal period of time. The
-                    were ups and downs and it was a really truly challenging and
-                    hard for me. I am glad that I did not quit as UBC showed me
-                    what I love and capable of doing, gifted me passion of
-                    continuous learning and trained me to not give up.
-                  </Typography>
-                </Grid>
-              </Grid>
+                    <Grid item xs={12} sm={5} md={2}>
+                      {/* <Paper
+                        elevation={2}
+                        className={classNames(
+                          url === "http://localhost:3000/"
+                            ? classes.portonLocal
+                            : classes.porton,
+                          classes.experienceImg
+                        )}
+                      > */}
+                        <img src="/images/portonlogo.png" style={{width: "100%"}}/>
+                      {/* </Paper> */}
+                    </Grid>
+                    <Grid item xs={12} sm={7} md={4}>
+                      <Typography
+                        variant="h5"
+                        gutterBottom
+                        className={classes.experiencesPlace}
+                      >
+                        Porton Health
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        gutterBottom
+                        className={classes.experiencesPosition}
+                      >
+                        Junior Full Stack Developer
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        gutterBottom
+                        className={classes.experiencesDescription}
+                      >
+                        Working at Porton Health since 2018, October has been
+                        awesome. Besides able to work with my favourite
+                        javscript library, React, I get to learn how to design,
+                        build and test in Meteor. My team and I are working hard
+                        everyday to deliver the best version of porton health
+                        Web Application.
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={5} md={2}>
+                      <Paper
+                        elevation={2}
+                        className={classNames(
+                          url === "http://localhost:3000/"
+                            ? classes.clariusLocal
+                            : classes.clarius,
+                          classes.experienceImg
+                        )}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={7} md={4}>
+                      <Typography
+                        variant="h5"
+                        gutterBottom
+                        className={classes.experiencesPlace}
+                      >
+                        Clarius Mobile Health
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        gutterBottom
+                        className={classes.experiencesPosition}
+                      >
+                        Software Engineer
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        gutterBottom
+                        className={classes.experiencesDescription}
+                      >
+                        Clarius was my stepping stone towards programming
+                        industry. My main focus there was to develop new
+                        software feature for their android version of Clarius
+                        Mobile Application. During my time there, I had the
+                        opportunity to learn new programming language and
+                        technology such as python, Qt and Jenkins
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={5} md={2}>
+                      <Paper
+                        elevation={2}
+                        className={classNames(
+                          url === "http://localhost:3000/"
+                            ? classes.brainstationLocal
+                            : classes.brainstation,
+                          classes.experienceImg
+                        )}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={7} md={4}>
+                      <Typography
+                        variant="h5"
+                        gutterBottom
+                        className={classes.experiencesPlace}
+                      >
+                        Brainstation
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        gutterBottom
+                        className={classes.experiencesPosition}
+                      >
+                        Full Time Web Development Student
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        gutterBottom
+                        className={classes.experiencesDescription}
+                      >
+                        Brainstation was nothing but endless of fun. I took at
+                        10 week full time web development program and I got to
+                        say, it was intense! In the end of the program, I was
+                        able to build MERN stack Web Application from scratch,
+                        comfortably.
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={5} md={2}>
+                      <Paper
+                        elevation={2}
+                        className={classNames(
+                          url === "http://localhost:3000/"
+                            ? classes.ubcLocal
+                            : classes.ubc,
+                          classes.experienceImg
+                        )}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={7} md={4}>
+                      <Typography
+                        variant="h5"
+                        gutterBottom
+                        className={classes.experiencesPlace}
+                      >
+                        University of British Columbia
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        gutterBottom
+                        className={classes.experiencesPosition}
+                      >
+                        B.A.Sc in Electrical Engineering
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        gutterBottom
+                        className={classes.experiencesDescription}
+                      >
+                        My four years in UBC was a phenomenal period of time.
+                        The were ups and downs and it was a really truly
+                        challenging and hard for me. I am glad that I did not
+                        quit as UBC showed me what I love and capable of doing,
+                        gifted me passion of continuous learning and trained me
+                        to not give up.
+                      </Typography>
+                    </Grid>
+                  </Grid>
             </div>
           </Paper>
           <div style={{ height: "100px" }} />
