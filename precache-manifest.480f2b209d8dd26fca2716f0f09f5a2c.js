@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/William-Can-Code/static/js/runtime~main.b6f43571.js"
   },
   {
-    "revision": "fd4a8929c6615f48a361",
-    "url": "/William-Can-Code/static/js/main.fd4a8929.chunk.js"
+    "revision": "c7cd65d716326558d6e1",
+    "url": "/William-Can-Code/static/js/main.c7cd65d7.chunk.js"
   },
   {
     "revision": "425bd6acb497c944737b",
     "url": "/William-Can-Code/static/js/1.425bd6ac.chunk.js"
   },
   {
-    "revision": "fd4a8929c6615f48a361",
+    "revision": "c7cd65d716326558d6e1",
     "url": "/William-Can-Code/static/css/main.db92bd92.chunk.css"
   },
   {
-    "revision": "d2c26ace9ac5bec81c27b4a8b5a65049",
+    "revision": "c7c5e8430a8a177f253d020f529df1ce",
     "url": "/William-Can-Code/index.html"
   }
 ];
