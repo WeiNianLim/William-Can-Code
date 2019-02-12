@@ -31,12 +31,21 @@ import CardMedia from "@material-ui/core/CardMedia";
 import classNames from "classnames";
 
 const styles = theme => ({
+  appLocal: {
+    position: "relative",
+    width: "100%",
+    margin: "auto",
+    background: 'url("/images/vancouver.jpg")',
+    backgroundPosition: "50%",
+    backgroundSize: "cover",
+    height: 380
+  },
   app: {
     position: "relative",
     width: "100%",
     margin: "auto",
-    // paddingTop: "400px",
-    background: 'url("/images/vancouver.jpg")',
+    background:
+      'url("https://weinianlim.github.io/William-Can-Code/images/vancouver.jpg")',
     backgroundPosition: "50%",
     backgroundSize: "cover",
     height: 380
@@ -155,46 +164,6 @@ const styles = theme => ({
   BNAWrapper: {
     color: "white"
   },
-  experienceImg: {
-    width: "100%",
-    height: 200
-  },
-  portonLocal: {
-    background: 'url("/images/portonlogo.png")',
-    backgroundSize: "cover"
-  },
-  porton: {
-    background:
-      'url("https://weinianlim.github.io/William-Can-Code/images/portonlogo.png")',
-    backgroundSize: "cover"
-  },
-  clariusLocal: {
-    background: 'url("/images/clarius.png")',
-    backgroundSize: "cover"
-  },
-  clarius: {
-    background:
-      'url("https://weinianlim.github.io/William-Can-Code/images/clarius.png")',
-    backgroundSize: "cover"
-  },
-  brainstationLocal: {
-    background: 'url("/images/brainstation.png")',
-    backgroundSize: "cover"
-  },
-  brainstation: {
-    background:
-      'url("https://weinianlim.github.io/William-Can-Code/images/brainstation.png")',
-    backgroundSize: "cover"
-  },
-  ubcLocal: {
-    background: 'url("/images/ubc.jpg")',
-    backgroundSize: "cover"
-  },
-  ubc: {
-    background:
-      'url("https://weinianlim.github.io/William-Can-Code/images/ubc.jpg")',
-    backgroundSize: "cover"
-  },
   experiencesPlace: {
     fontFamily: "Roboto Slab",
     fontWeight: "600",
@@ -210,6 +179,22 @@ const styles = theme => ({
     fontFamily: "Roboto Slab",
     fontWeight: "600",
     color: "#B5B5B5"
+  },
+  experiencesImg: {
+    width: "100%",
+    height: "auto",
+    borderRadius: 10,
+    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.12),0 2px 4px 0 rgba(0,0,0,0.08)",
+    [theme.breakpoints.down("md")]: {
+      // width: "auto",
+      // height: 200,
+    },
+    [theme.breakpoints.down("sm")]: {
+     
+    },
+    [theme.breakpoints.down("xs")]: {
+      
+    }
   }
 });
 
@@ -479,16 +464,14 @@ class Home extends Component {
               </Typography>
               <Grid container spacing={24} style={{ marginTop: "35px" }}>
                 <Grid item xs={12} sm={5} md={2}>
-                  <Paper elevation={2}>
-                    <img
-                      src={
-                        url == "http://localhost:3000/"
-                          ? "/images/portonlogo.png"
-                          : "https://weinianlim.github.io/William-Can-Code/images/portonlogo.png"
-                      }
-                      style={{ width: "100%" }}
-                    />
-                  </Paper>
+                  <img
+                    src={
+                      url == "http://localhost:3000/"
+                        ? "/images/portonlogo.png"
+                        : "https://weinianlim.github.io/William-Can-Code/images/portonlogo.png"
+                    }
+                    className={classes.experiencesImg}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={7} md={4}>
                   <Typography
@@ -518,16 +501,14 @@ class Home extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm={5} md={2}>
-                  <Paper elevation={2}>
-                    <img
-                      src={
-                        url == "http://localhost:3000/"
-                          ? "/images/clarius.png"
-                          : "https://weinianlim.github.io/William-Can-Code/images/clarius.png"
-                      }
-                      style={{ width: "100%" }}
-                    />
-                  </Paper>
+                  <img
+                    src={
+                      url == "http://localhost:3000/"
+                        ? "/images/clarius.png"
+                        : "https://weinianlim.github.io/William-Can-Code/images/clarius.png"
+                    }
+                    className={classes.experiencesImg}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={7} md={4}>
                   <Typography
@@ -558,16 +539,14 @@ class Home extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm={5} md={2}>
-                  <Paper elevation={2}>
-                    <img
-                      src={
-                        url == "http://localhost:3000/"
-                          ? "/images/brainstation.png"
-                          : "https://weinianlim.github.io/William-Can-Code/images/brainstation.png"
-                      }
-                      style={{ width: "100%" }}
-                    />
-                  </Paper>
+                  <img
+                    src={
+                      url == "http://localhost:3000/"
+                        ? "/images/brainstation.png"
+                        : "https://weinianlim.github.io/William-Can-Code/images/brainstation.png"
+                    }
+                    className={classes.experiencesImg}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={7} md={4}>
                   <Typography
@@ -596,16 +575,14 @@ class Home extends Component {
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm={5} md={2}>
-                  <Paper elevation={2}>
-                    <img
-                      src={
-                        url == "http://localhost:3000/"
-                          ? "/images/ubc.jpg"
-                          : "https://weinianlim.github.io/William-Can-Code/images/ubc.jpg"
-                      }
-                      style={{ width: "100%" }}
-                    />
-                  </Paper>
+                  <img
+                    src={
+                      url == "http://localhost:3000/"
+                        ? "/images/ubc.jpg"
+                        : "https://weinianlim.github.io/William-Can-Code/images/ubc.jpg"
+                    }
+                    className={classes.experiencesImg}
+                  />
                 </Grid>
                 <Grid item xs={12} sm={7} md={4}>
                   <Typography
