@@ -474,6 +474,11 @@ class Home extends Component {
                   />
                 </BottomNavigation>
               </Grid>
+              <Switch>
+                <Route path={match.url + '/experiences'} component={Experiences} />
+                <Route path={match.url + '/technology'} component={Technology} />
+                <Route path={match.url + '/projects'} component={Projects} />
+              </Switch>
               <Typography
                 variant="h3"
                 gutterBottom
