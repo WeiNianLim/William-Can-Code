@@ -54,9 +54,7 @@ const styles = theme => ({
     position: "fixed",
     width: "100%",
     right: 0,
-    left: 0,
-    backgroundColor: "transparent",
-    boxShadow: "none"
+    left: 0
   },
   navButton: {
     color: "#ccd0d5",
@@ -189,19 +187,17 @@ const styles = theme => ({
       // width: "auto",
       // height: 200,
     },
-    [theme.breakpoints.down("sm")]: {
-     
-    },
-    [theme.breakpoints.down("xs")]: {
-      
-    }
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("xs")]: {}
   }
 });
 
 class Home extends Component {
   state = {
     value: "experiences",
-    open: false
+    open: false,
+    backgroundColor: "transparent",
+    backgroundShadow: "none"
   };
 
   handleChange = (event, value) => {
@@ -216,13 +212,43 @@ class Home extends Component {
     this.setState({ open: false });
   };
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = event => {
+    if (window.pageYOffset > 200) {
+      this.setState({
+        backgroundShadow:
+          "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 150, 243, 0.46)",
+        backgroundColor: "#2196F3"
+      });
+    } else {
+      this.setState({
+        backgroundColor: "transparent",
+        backgroundShadow: "none"
+      });
+    }
+  };
+
   render() {
     const { classes, width } = this.props;
     const { value } = this.state;
     const url = window.location.href;
+    console.log(window.innerHeight);
     return (
       <div>
-        <AppBar className={classes.appBar}>
+        <AppBar
+          className={classes.appBar}
+          style={{
+            backgroundColor: this.state.backgroundColor,
+            boxShadow: this.state.backgroundShadow
+          }}
+        >
           {isWidthUp("sm", width) ? (
             <Grid
               container
