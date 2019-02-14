@@ -656,6 +656,86 @@ class Home extends Component {
                   </Grid>
                 </div>
               )}
+              {value === "technology" &&
+                <div>
+                  <Typography
+                    variant="h3"
+                    gutterBottom
+                    style={{
+                      maxWidth: "600px",
+                      textAlign: "center",
+                      margin: "10px auto",
+                      color: "#3c4858",
+                      fontFamily: "Roboto Slab",
+                      fontWeight: "700"
+                    }}
+                  >
+                    I've used 
+                  </Typography>
+                  <Grid container spacing={24}>
+                    <Grid item sm={3} md={2}>
+                    <img
+                        src={
+                          url == "http://localhost:3000/"
+                            ? "/images/HTML5.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/HTML5.png"
+                        }
+                        className={classes.experiencesImg}
+                      />
+                    </Grid>
+                    <Grid item sm={3} md={2}>
+                      <img
+                        src={
+                          url == "http://localhost:3000/"
+                            ? "/images/css3.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/css3.png"
+                        }
+                        className={classes.experiencesImg}
+                      />
+                    </Grid>
+                    <Grid item sm={3} md={2}>
+                      <img
+                        src={
+                          url == "http://localhost:3000/"
+                            ? "/images/javascript.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/javascript.png"
+                        }
+                        className={classes.experiencesImg}
+                      />
+                    </Grid>
+                    <Grid item sm={3} md={2}>
+                      <img
+                        src={
+                          url == "http://localhost:3000/"
+                            ? "/images/node.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/node.png"
+                        }
+                        className={classes.experiencesImg}
+                      />
+                    </Grid>
+                    <Grid item sm={3} md={2}>
+                      <img
+                        src={
+                          url == "http://localhost:3000/"
+                            ? "/images/react.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/react.png"
+                        }
+                        className={classes.experiencesImg}
+                      />
+                    </Grid>
+                    <Grid item sm={3} md={2}>
+                      <img
+                        src={
+                          url == "http://localhost:3000/"
+                            ? "/images/mongodb.png"
+                            : "https://weinianlim.github.io/William-Can-Code/images/mongodb.png"
+                        }
+                        className={classes.experiencesImg}
+                      />
+                    </Grid>
+                  </Grid>
+                </div>
+              }
             </div>
           </Paper>
           <div style={{ height: "100px" }} />
