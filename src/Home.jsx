@@ -31,10 +31,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import classNames from "classnames";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Snackbar from "@material-ui/core/Snackbar";
-import CloseIcon from '@material-ui/icons/Close';
-import green from '@material-ui/core/colors/green';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CloseIcon from "@material-ui/icons/Close";
+import green from "@material-ui/core/colors/green";
+import SnackbarContent from "@material-ui/core/SnackbarContent";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 const styles = theme => ({
   appLocal: {
@@ -51,10 +51,11 @@ const styles = theme => ({
     width: "100%",
     margin: "auto",
     background:
-      'url("https://weinianlim.github.io/William-Can-Code/images/vancouver.jpg")',
+      'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://weinianlim.github.io/William-Can-Code/images/vancouver.jpg")',
     backgroundPosition: "50%",
     backgroundSize: "cover",
-    height: 380
+    height: 380,
+    
   },
   appBar: {
     position: "fixed",
@@ -204,12 +205,12 @@ const styles = theme => ({
     }
   },
   snackBar: {
-    backgroundColor: green[600],
+    backgroundColor: green[600]
   },
   message: {
-    display: 'flex',
-    alignItems: 'center',
-  },
+    display: "flex",
+    alignItems: "center"
+  }
 });
 
 class Home extends Component {
@@ -293,8 +294,8 @@ class Home extends Component {
                       alt="Will Header"
                       src={
                         url == "http://localhost:3000/"
-                          ? "/images/profile.jpg"
-                          : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+                          ? "/images/profile_2.jpg"
+                          : "https://weinianlim.github.io/William-Can-Code/images/profile_2.jpg"
                       }
                       style={{ margin: "10px" }}
                       imgProps={{ root: classes.imgAva }}
@@ -363,8 +364,8 @@ class Home extends Component {
                           alt="Will Header"
                           src={
                             url == "http://localhost:3000/"
-                              ? "/images/profile.jpg"
-                              : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+                              ? "/images/profile_2.jpg"
+                              : "https://weinianlim.github.io/William-Can-Code/images/profile_2.jpg"
                           }
                           style={{ margin: "10px" }}
                         />
@@ -399,8 +400,8 @@ class Home extends Component {
                   <Avatar
                     src={
                       url == "http://localhost:3000/"
-                        ? "/images/profile.jpg"
-                        : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+                        ? "/images/profile_2.jpg"
+                        : "https://weinianlim.github.io/William-Can-Code/images/profile_2.jpg"
                     }
                     className={classes.bigAvatar}
                     imgProps={{ root: classes.imgAvatar }}
@@ -724,7 +725,10 @@ class Home extends Component {
                   className={classes.snackBar}
                   aria-describedby="client-snackbar"
                   message={
-                    <span className={classes.message}><CheckCircleIcon style={{marginRight: "3px"}}/>Email Address Copied to Clipboard</span>
+                    <span className={classes.message}>
+                      <CheckCircleIcon style={{ marginRight: "3px" }} />
+                      Email Address Copied to Clipboard
+                    </span>
                   }
                   action={[
                     <IconButton
@@ -734,7 +738,7 @@ class Home extends Component {
                       onClick={this.handleClose}
                     >
                       <CloseIcon className={classes.icon} />
-                    </IconButton>,
+                    </IconButton>
                   ]}
                 />
               </Snackbar>
@@ -816,8 +820,8 @@ export default withWidth()(withStyles(styles)(Home));
 //         }}
 //         src={
 //           url == "http://localhost:3000/"
-//             ? "/images/profile.jpg"
-//             : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+//             ? "/images/profile_2.jpg"
+//             : "https://weinianlim.github.io/William-Can-Code/images/profile_2.jpg"
 //         }
 //       />
 //     </Grid>
@@ -839,8 +843,8 @@ export default withWidth()(withStyles(styles)(Home));
 //         alt="Avatar"
 //         src={
 //           url == "http://localhost:3000/"
-//             ? "/images/profile.jpg"
-//             : "https://weinianlim.github.io/William-Can-Code/images/profile.jpg"
+//             ? "/images/profile_2.jpg"
+//             : "https://weinianlim.github.io/William-Can-Code/images/profile_2.jpg"
 //         }
 //       />
 //     </Grid>
