@@ -29,6 +29,12 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import classNames from "classnames";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import Snackbar from "@material-ui/core/Snackbar";
+import CloseIcon from '@material-ui/icons/Close';
+import green from '@material-ui/core/colors/green';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 const styles = theme => ({
   appLocal: {
@@ -189,7 +195,21 @@ const styles = theme => ({
     },
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {}
-  }
+  },
+  resume: {
+    textDecoration: "none",
+    color: "white",
+    "&:hover": {
+      fontWeight: "600"
+    }
+  },
+  snackBar: {
+    backgroundColor: green[600],
+  },
+  message: {
+    display: 'flex',
+    alignItems: 'center',
+  },
 });
 
 class Home extends Component {
@@ -197,7 +217,12 @@ class Home extends Component {
     value: "experiences",
     open: false,
     backgroundColor: "transparent",
-    backgroundShadow: "none"
+    backgroundShadow: "none",
+    copied: false
+  };
+
+  handleClose = () => {
+    this.setState({ copied: false });
   };
 
   handleChange = (event, value) => {
@@ -237,9 +262,9 @@ class Home extends Component {
 
   render() {
     const { classes, width } = this.props;
-    const { value } = this.state;
+    const { value, copied } = this.state;
     const url = window.location.href;
-    console.log(window.innerHeight);
+    console.log(this.state);
     return (
       <div>
         <AppBar
@@ -285,7 +310,7 @@ class Home extends Component {
                   justify="flex-end"
                   alignItems="center"
                 >
-                  <Grid item>
+                  {/* <Grid item>
                     <Button className={classes.navButton}>Projects</Button>
                   </Grid>
                   <Grid item>
@@ -293,6 +318,21 @@ class Home extends Component {
                   </Grid>
                   <Grid item>
                     <Button className={classes.navButton}>Contact Me</Button>
+                  </Grid> */}
+                  <Grid item>
+                    <Button className={classes.navButton}>
+                      <a
+                        href={
+                          url == "http://localhost:3000/"
+                            ? "/images/resume.pdf"
+                            : "https://weinianlim.github.io/William-Can-Code/images/resume.pdf"
+                        }
+                        target="_blank"
+                        className={classes.resume}
+                      >
+                        Resume
+                      </a>
+                    </Button>
                   </Grid>
                 </Grid>
               </Grid>
@@ -400,17 +440,33 @@ class Home extends Component {
                     marginTop: "30px"
                   }}
                 >
-                  <i
-                    class="im im-linkedin"
-                    style={{ color: "#0077B5", marginRight: "20px" }}
-                  />
-
-                  <i class="im im-mail" style={{ color: "#D54D40" }} />
-
-                  <i
-                    class="im im-github"
-                    style={{ color: "#24292E", marginLeft: "20px" }}
-                  />
+                  <Button>
+                    <a
+                      href="https://www.linkedin.com/in/williamwnl/"
+                      target="_blank"
+                    >
+                      <i
+                        class="im im-linkedin"
+                        style={{ color: "#0077B5", marginRight: "20px" }}
+                      />
+                    </a>
+                  </Button>
+                  <CopyToClipboard
+                    text="weinianlim26@gmail.com"
+                    onCopy={() => this.setState({ copied: true })}
+                  >
+                    <Button>
+                      <i class="im im-mail" style={{ color: "#D54D40" }} />
+                    </Button>
+                  </CopyToClipboard>
+                  <Button>
+                    <a href="https://github.com/WeiNianLim" target="_blank">
+                      <i
+                        class="im im-github"
+                        style={{ color: "#24292E", marginLeft: "20px" }}
+                      />
+                    </a>
+                  </Button>
                 </Grid>
               </Grid>
               <Typography
@@ -419,15 +475,17 @@ class Home extends Component {
                 style={{
                   maxWidth: "500px",
                   textAlign: "center",
-                  margin: "10px auto"
+                  margin: "20px auto"
                 }}
               >
-                body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Quos blanditiis tenetur unde suscipit, quam beatae rerum
-                inventore consectetur, neque doloribus, cupiditate numquam
-                dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+                Ever since I developed my first android app, coding has been
+                part of my lifestyle as long as i can remember. The awesome
+                feeling of solving a coding challenge, the "high" of completing
+                a project and the satisfaction from seeing my work being used by
+                other people, these have become my daily source of dopamine.
               </Typography>
-              <Grid
+              <Divider variant="middle" />
+              {/* <Grid
                 container
                 direction="column"
                 justify="center"
@@ -473,7 +531,7 @@ class Home extends Component {
                     }}
                   />
                 </BottomNavigation>
-              </Grid>
+              </Grid> */}
               {/* <Switch>
                 <Route
                   path={match.url + "/experiences"}
@@ -656,7 +714,31 @@ class Home extends Component {
                   </Grid>
                 </div>
               )}
-              {value === "technology" &&
+              <Snackbar
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                open={copied}
+                onClose={this.handleClose}
+                autoHideDuration={6000}
+              >
+                <SnackbarContent
+                  className={classes.snackBar}
+                  aria-describedby="client-snackbar"
+                  message={
+                    <span className={classes.message}><CheckCircleIcon style={{marginRight: "3px"}}/>Email Address Copied to Clipboard</span>
+                  }
+                  action={[
+                    <IconButton
+                      key="close"
+                      aria-label="Close"
+                      color="inherit"
+                      onClick={this.handleClose}
+                    >
+                      <CloseIcon className={classes.icon} />
+                    </IconButton>,
+                  ]}
+                />
+              </Snackbar>
+              {/* {value === "technology" && (
                 <div>
                   <Typography
                     variant="h3"
@@ -670,74 +752,14 @@ class Home extends Component {
                       fontWeight: "700"
                     }}
                   >
-                    I've used 
+                    I've used
                   </Typography>
-                  <Grid container spacing={24}>
-                    <Grid item sm={3} md={2}>
-                    <img
-                        src={
-                          url == "http://localhost:3000/"
-                            ? "/images/HTML5.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/HTML5.png"
-                        }
-                        className={classes.experiencesImg}
-                      />
-                    </Grid>
-                    <Grid item sm={3} md={2}>
-                      <img
-                        src={
-                          url == "http://localhost:3000/"
-                            ? "/images/css3.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/css3.png"
-                        }
-                        className={classes.experiencesImg}
-                      />
-                    </Grid>
-                    <Grid item sm={3} md={2}>
-                      <img
-                        src={
-                          url == "http://localhost:3000/"
-                            ? "/images/javascript.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/javascript.png"
-                        }
-                        className={classes.experiencesImg}
-                      />
-                    </Grid>
-                    <Grid item sm={3} md={2}>
-                      <img
-                        src={
-                          url == "http://localhost:3000/"
-                            ? "/images/node.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/node.png"
-                        }
-                        className={classes.experiencesImg}
-                      />
-                    </Grid>
-                    <Grid item sm={3} md={2}>
-                      <img
-                        src={
-                          url == "http://localhost:3000/"
-                            ? "/images/react.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/react.png"
-                        }
-                        className={classes.experiencesImg}
-                      />
-                    </Grid>
-                    <Grid item sm={3} md={2}>
-                      <img
-                        src={
-                          url == "http://localhost:3000/"
-                            ? "/images/mongodb.png"
-                            : "https://weinianlim.github.io/William-Can-Code/images/mongodb.png"
-                        }
-                        className={classes.experiencesImg}
-                      />
-                    </Grid>
-                  </Grid>
+                  <Grid container spacing={24} />
                 </div>
-              }
+              )} */}
             </div>
           </Paper>
+
           <div style={{ height: "100px" }} />
         </div>
       </div>
