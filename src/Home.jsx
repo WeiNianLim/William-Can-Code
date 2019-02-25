@@ -204,6 +204,13 @@ const styles = theme => ({
       fontWeight: "600"
     }
   },
+  resumeInDrawer :{
+    textDecoration: "none",
+    color: "black",
+    "&:hover": {
+      fontWeight: "600"
+    }
+  },
   snackBar: {
     backgroundColor: green[600]
   },
@@ -349,7 +356,7 @@ class Home extends Component {
                 >
                   <Grid item>
                     <IconButton onClick={this.handleDrawerOpen}>
-                      <MenuIcon />
+                      <MenuIcon style={{color: "white"}}/>
                     </IconButton>
                   </Grid>
                   <Grid item align="center">
@@ -359,7 +366,7 @@ class Home extends Component {
                       justify="space-between"
                       alignItems="center"
                     >
-                      <Grid item>
+                      {/* <Grid item>
                         <Avatar
                           alt="Will Header"
                           src={
@@ -369,9 +376,9 @@ class Home extends Component {
                           }
                           style={{ margin: "10px" }}
                         />
-                      </Grid>
+                      </Grid> */}
                       <Grid item />
-                      <Typography variant="h4">I'm Will</Typography>
+                      <Typography variant="h4" style={{color:"white"}}>It's Will</Typography>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -381,9 +388,19 @@ class Home extends Component {
         </AppBar>
         <Drawer open={this.state.open} onClose={this.handleDrawerClose}>
           <List>
-            <ListItem>Projects</ListItem>
-            <ListItem>About</ListItem>
-            <ListItem>Contact Me</ListItem>
+            <ListItem><a
+                        href={
+                          url == "http://localhost:3000/"
+                            ? "/images/resume.pdf"
+                            : "https://weinianlim.github.io/William-Can-Code/images/resume.pdf"
+                        }
+                        target="_blank"
+                        className={classes.resumeInDrawer}
+                      >
+                        Resume
+                      </a></ListItem>
+            {/* <ListItem>About</ListItem>
+            <ListItem>Contact Me</ListItem> */}
           </List>
         </Drawer>
         <div className={classes.app} />
