@@ -608,9 +608,9 @@ class Home extends Component {
                         gutterBottom
                         className={classes.experiencesDescription}
                       >
-                        Working at Porton Health since 2018, October has been
+                        Working at Porton Health since October, 2018 has been
                         awesome. Besides able to work with my favourite
-                        javscript library, React, I get to learn how to design,
+                        javscript library, React, I have the opportunity to learn how to design,
                         build and test in Meteor. My team and I are working hard
                         everyday to deliver the best version of porton health
                         Web Application.
