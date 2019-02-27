@@ -54,8 +54,7 @@ const styles = theme => ({
       'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://weinianlim.github.io/William-Can-Code/images/vancouver.jpg")',
     backgroundPosition: "50%",
     backgroundSize: "cover",
-    height: 380,
-    
+    height: 380
   },
   appBar: {
     position: "fixed",
@@ -204,7 +203,7 @@ const styles = theme => ({
       fontWeight: "600"
     }
   },
-  resumeInDrawer :{
+  resumeInDrawer: {
     textDecoration: "none",
     color: "black",
     "&:hover": {
@@ -356,7 +355,7 @@ class Home extends Component {
                 >
                   <Grid item>
                     <IconButton onClick={this.handleDrawerOpen}>
-                      <MenuIcon style={{color: "white"}}/>
+                      <MenuIcon style={{ color: "white" }} />
                     </IconButton>
                   </Grid>
                   <Grid item align="center">
@@ -378,7 +377,9 @@ class Home extends Component {
                         />
                       </Grid> */}
                       <Grid item />
-                      <Typography variant="h4" style={{color:"white"}}>It's Will</Typography>
+                      <Typography variant="h4" style={{ color: "white" }}>
+                        It's Will
+                      </Typography>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -388,17 +389,19 @@ class Home extends Component {
         </AppBar>
         <Drawer open={this.state.open} onClose={this.handleDrawerClose}>
           <List>
-            <ListItem><a
-                        href={
-                          url == "http://localhost:3000/"
-                            ? "/images/resume.pdf"
-                            : "https://weinianlim.github.io/William-Can-Code/images/resume.pdf"
-                        }
-                        target="_blank"
-                        className={classes.resumeInDrawer}
-                      >
-                        Resume
-                      </a></ListItem>
+            <ListItem>
+              <a
+                href={
+                  url == "http://localhost:3000/"
+                    ? "/images/resume.pdf"
+                    : "https://weinianlim.github.io/William-Can-Code/images/resume.pdf"
+                }
+                target="_blank"
+                className={classes.resumeInDrawer}
+              >
+                Resume
+              </a>
+            </ListItem>
             {/* <ListItem>About</ListItem>
             <ListItem>Contact Me</ListItem> */}
           </List>
@@ -609,11 +612,11 @@ class Home extends Component {
                         className={classes.experiencesDescription}
                       >
                         Working at Porton Health since October, 2018 has been
-                        awesome. Besides able to work with my favourite
-                        javscript library, React, I have the opportunity to learn how to design,
-                        build and test in Meteor. My team and I are working hard
-                        everyday to deliver the best version of porton health
-                        Web Application.
+                        awesome. Besides being able to work with my favourite
+                        javscript library and React, I have the opportunity to
+                        learn how to design, build and test in Meteor. My team
+                        and I are working hard everyday to deliver the best
+                        version of porton health Web Application.
                       </Typography>
                     </Grid>
                     <Grid item xs={12} sm={5} md={2}>
@@ -648,7 +651,7 @@ class Home extends Component {
                       >
                         Clarius was my stepping stone towards programming
                         industry. My main focus there was to develop new
-                        software feature for their android version of Clarius
+                        software features for their android version of Clarius
                         Mobile Application. During my time there, I had the
                         opportunity to learn new programming language and
                         technology such as python, Qt and Jenkins
@@ -684,8 +687,8 @@ class Home extends Component {
                         gutterBottom
                         className={classes.experiencesDescription}
                       >
-                        Brainstation was nothing but endless of fun. I took at
-                        10 week full time web development program and I got to
+                        Brainstation was nothing but endless of fun. I took a
+                        10-week full time web development program and I got to
                         say, it was intense! In the end of the program, I was
                         able to build MERN stack Web Application from scratch,
                         comfortably.
@@ -721,12 +724,12 @@ class Home extends Component {
                         gutterBottom
                         className={classes.experiencesDescription}
                       >
-                        My four years in UBC was a phenomenal period of time.
-                        The were ups and downs and it was a really truly
-                        challenging and hard for me. I am glad that I did not
-                        quit as UBC showed me what I love and capable of doing,
-                        gifted me passion of continuous learning and trained me
-                        to not give up.
+                        My four years in UBC was a phenomenal period of my life.
+                        There were ups and downs and it was truly challenging
+                        and hard for me. I am glad that I did not quit, as UBC
+                        showed me what I am capable of doing, gifted me a
+                        passion for continuous learning and trained me to not
+                        give up easily.
                       </Typography>
                     </Grid>
                   </Grid>
