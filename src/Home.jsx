@@ -500,7 +500,7 @@ class Home extends Component {
                 }}
               >
                 Ever since I developed my first android app, coding has been
-                part of my lifestyle as long as i can remember. The awesome
+                part of my lifestyle. The awesome
                 feeling of solving a coding challenge, the "high" of completing
                 a project and the satisfaction from seeing my work being used by
                 other people, these have become my daily source of dopamine.
