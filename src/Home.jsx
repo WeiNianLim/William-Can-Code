@@ -500,10 +500,10 @@ class Home extends Component {
                 }}
               >
                 Ever since I developed my first android app, coding has been
-                part of my lifestyle. The awesome
-                feeling of solving a coding challenge, the "high" of completing
-                a project and the satisfaction from seeing my work being used by
-                other people, these have become my daily source of dopamine.
+                part of my lifestyle. The awesome feeling of solving a coding
+                challenge, the "high" of completing a project and the
+                satisfaction from seeing my work being used by other people,
+                these have become my daily source of dopamine.
               </Typography>
               <Divider variant="middle" />
               {/* <Grid
@@ -578,7 +578,7 @@ class Home extends Component {
                       fontWeight: "700"
                     }}
                   >
-                    Awesome Experiences
+                    Journey
                   </Typography>
                   <Grid container spacing={24} style={{ marginTop: "35px" }}>
                     <Grid item xs={12} sm={5} md={2}>
@@ -611,12 +611,11 @@ class Home extends Component {
                         gutterBottom
                         className={classes.experiencesDescription}
                       >
-                        Working at Porton Health since October, 2018 has been
-                        awesome. Besides being able to work with my favourite
-                        javscript library and React, I have the opportunity to
-                        learn how to design, build and test in Meteor. My team
-                        and I are working hard everyday to deliver the best
-                        version of porton health Web Application.
+                        Being part of Porton Health since October, 2018 has been
+                        rewarding. Being a Full Stack Developer at Porton
+                        Health, I am involved in all stage of Software life
+                        cycle which includes design, prototyping, build and
+                        testing.
                       </Typography>
                     </Grid>
                     <Grid item xs={12} sm={5} md={2}>
@@ -649,11 +648,11 @@ class Home extends Component {
                         gutterBottom
                         className={classes.experiencesDescription}
                       >
-                        Clarius was my stepping stone towards programming
-                        industry. My main focus there was to develop new
-                        software features for their android version of Clarius
-                        Mobile Application. During my time there, I had the
-                        opportunity to learn new programming language and
+                        Clarius Mobile Health was my stepping stone towards
+                        software development industry. My main focus there was
+                        to research and develop new software features for
+                        Clarius Mobile Application. During my time there, I had
+                        the opportunity to learn new programming language and
                         technology such as python, Qt and Jenkins
                       </Typography>
                     </Grid>
@@ -687,11 +686,11 @@ class Home extends Component {
                         gutterBottom
                         className={classes.experiencesDescription}
                       >
-                        Brainstation was nothing but endless of fun. I took a
-                        10-week full time web development program and I got to
-                        say, it was intense! In the end of the program, I was
-                        able to build MERN stack Web Application from scratch,
-                        comfortably.
+                        Brainstation was nothing but endless of fun. The 10-week
+                        full time web development program taught me how to build
+                        MERN stack Web Application from scratch,comfortably. It
+                        was truly one of the best decision I made and I always
+                        missed all the good moments in Brainstation.
                       </Typography>
                     </Grid>
                     <Grid item xs={12} sm={5} md={2}>
@@ -725,11 +724,11 @@ class Home extends Component {
                         className={classes.experiencesDescription}
                       >
                         My four years in UBC was a phenomenal period of my life.
-                        There were ups and downs and it was truly challenging
-                        and hard for me. I am glad that I did not quit, as UBC
-                        showed me what I am capable of doing, gifted me a
-                        passion for continuous learning and trained me to not
-                        give up easily.
+                        It was truly a challenging period of my life and I am
+                        glad that I made it through. In the end, UBC showed me
+                        what I am capable of doing, gifted me a passion for
+                        continuous learning and trained me to not give up
+                        easily.
                       </Typography>
                     </Grid>
                   </Grid>
